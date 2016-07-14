@@ -18,15 +18,7 @@ describe Oystercard do
     end
   end
 
-  # describe '#balance' do
-  #   it 'should check that a new card has a balance' do
-  #     expect(subject).to respond_to(:balance)
-  #   end
-  # end
-
   describe 'top_up' do
-    #it { is_expected.to respond_to(:top_up).with(1).argument }
-
     it 'should add money to balance' do
       expect { subject.top_up(5) }.to change { subject.balance }.by 5
     end
@@ -36,11 +28,6 @@ describe Oystercard do
       expect { subject.top_up(91) }.to raise_error "Exceeds limit: #{limit}"
     end
   end
-
-  #context 'while in a journey' do # do we need this?
-    # describe '#in_journey?' do
-    #   it { is_expected.to respond_to(:in_journey?) }
-    # end
 
   context 'when touching in and out' do
     describe 'it checks balance' do
