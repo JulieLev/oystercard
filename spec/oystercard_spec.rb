@@ -1,6 +1,15 @@
 require 'oystercard'
 
 describe Oystercard do
+  let(:entry_station) { double :station }
+  let(:exit_station) { double :station }
+
+  describe 'when new' do
+    it 'journey history should be empty' do
+      expect(subject.journeys).to be_empty
+    end
+  end
+
   describe '#balance' do
     it 'should check that a new card has a balance' do
       expect(subject).to respond_to(:balance)
@@ -25,9 +34,6 @@ describe Oystercard do
   end
 
   context 'while in journey' do
-    let(:entry_station) { double :station }
-    let(:exit_station) { double :station }
-
     describe '#in_journey?' do
       it { is_expected.to respond_to(:in_journey?) }
 
@@ -73,6 +79,13 @@ describe Oystercard do
         subject.touch_in(entry_station)
         subject.touch_out(exit_station)
         expect(subject.exit_station).to eq exit_station
+      end
+
+      it 'stores a list of journeys' do
+        subject.top_up(5)
+        subject.touch_in(entry_station)
+        subject.touch_out(exit_station)
+        expect(subject.journeys.length).to eq 1
       end
     end
   end
