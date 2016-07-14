@@ -71,8 +71,9 @@ describe Oystercard do
         expect(subject.exit_station).to eq exit_station
       end
 
+      let(:journey) { { entry: entry_station, exit: exit_station } }
       it 'stores a list of journeys' do
-        expect(subject.journeys.length).to eq 1
+        expect(subject.journeys).to include journey
       end
     end # describe at touch_out
   end # context touch in and out
