@@ -1,3 +1,5 @@
+require 'journey'
+
 class Oystercard
   LIMIT = 90
   MINIMUM_FARE = 1
@@ -31,7 +33,8 @@ class Oystercard
 
   def add_journey
     journey = {}
-    journey[:entry], journey[:exit] = entry_station, exit_station
+    journey[:entry] = entry_station.name
+    journey[:exit] = exit_station.name
     @journeys << journey
   end
 
