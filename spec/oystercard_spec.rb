@@ -47,9 +47,9 @@ describe Oystercard do
         expect(subject).to be_in_journey
       end
 
-      it 'should record the entry station' do
-        expect(subject.entry_station).to eq entry_station
-      end
+      # it 'should record the entry station' do
+      #   expect(subject.entry_station).to eq entry_station
+      # end
     end
 
     describe 'at touch_out' do
@@ -67,9 +67,9 @@ describe Oystercard do
         subject.touch_out(exit_station)
       end
 
-      it 'should record the exit station' do
-        expect(subject.exit_station).to eq exit_station
-      end
+      # it 'should record the exit station' do
+      #   expect(subject.exit_station).to eq exit_station
+      # end
 
       let(:journey) { { entry: entry_station, exit: exit_station } }
       it 'stores a list of journeys' do

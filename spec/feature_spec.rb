@@ -2,7 +2,7 @@ require 'oystercard'
 require 'station'
 require 'journey'
 
-describe 'journey working feature' do
+describe '* journey working feature test *' do
 card = Oystercard.new
 card.top_up(20)
 
