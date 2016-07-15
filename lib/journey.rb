@@ -8,7 +8,7 @@ class Journey
   PENALTY_FARE = 6
 
   def initialize(entry_station = nil)
-    #@journey = {}
+    @journey = {}
     @entry_station = entry_station
   end
 
@@ -17,9 +17,9 @@ class Journey
   end
 
   def add_journey
-    self[:entry_station] = @entry_station
-    self[:exit_station] = @exit_station
-    self
+    journey[:entry_station] = @entry_station
+    journey[:exit_station] = @exit_station
+    journey
   end
 
   def incomplete?

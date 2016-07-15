@@ -30,6 +30,7 @@ class Oystercard
   def touch_out(exit_station)
     @journey.finish(exit_station)
     @journeys << @journey.add_journey
+    @balance -= @journey.fare
   end
 
   private
