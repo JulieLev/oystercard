@@ -13,9 +13,9 @@ describe Oystercard do
       expect(subject.balance).to eq(0)
     end
 
-    it 'should not be in a journey' do
-      expect(subject.in_journey?).to eq false
-    end
+    # it 'should not be in a journey' do
+    #   expect(subject.in_journey?).to eq false
+    # end
   end
 
   describe 'top_up' do
